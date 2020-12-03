@@ -1,5 +1,11 @@
 const { Pool } = require('pg');
 
+/**
+ * @typedef {object} PGParam
+ * @param {"text"|"numeric"|"json"|"bool"} type Predefined types (can also put other types as a string)
+ * @param {any} value
+ */
+
 function prepareFunctionCall(functionName, params) {
   let p = [];
   let f = [];
@@ -77,8 +83,8 @@ class PGFunky {
   /**
    * Execute the given function with the given parameters. Function names should be formatted as
    * schema.function
-   * @param functionName
-   * @param params
+   * @param {string} functionName
+   * @param {PGParam[]} params
    */
   execute(functionName, params) {
     let prepped = prepareFunctionCall(functionName, params);
