@@ -1,0 +1,28 @@
+{
+  "name": "pg-funky",
+  "version": "2.0.3",
+  "description": "From a security standpoint, I prefer interacting with PostgreSQL only with functions from my applications. So, I made it easy. Also, I always returned JSON objects for ease of use with web projects. So that's what you get here.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:driverjb/pg-funky.git"
+  },
+  "keywords": [
+    "PostgreSQL",
+    "pg",
+    "function",
+    "security"
+  ],
+  "author": {
+    "name": "Joel Driver",
+    "email": "driverjb09@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/driverjb/pg-funky/issues"
+  },
+  "homepage": "https://github.com/driverjb/pg-funky",
+  "dependencies": {
+    "pg": "^8.5.1"
+  }
+}
