@@ -1,6 +1,6 @@
 {
   "name": "pg-funky",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "From a security standpoint, I prefer interacting with PostgreSQL only with functions from my applications. So, I made it easy. Also, I always returned JSON objects for ease of use with web projects. So that's what you get here.",
   "main": "index.js",
   "repository": {
