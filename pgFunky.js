@@ -89,12 +89,14 @@ class PGFunky {
   execute(functionName, params) {
     let prepped = prepareFunctionCall(functionName, params);
     return this.pool.connect().then((client) => {
-      return client.query(prepped.sql, prepped.params).then((result) => {
-        let r = result.rows[0]['RESULT'];
-        client.release();
-        if (Array.isArray(r) && r.length === 1 && r[0] == null) return [];
-        else return r;
-      });
+      return client
+        .query(prepped.sql, prepped.params)
+        .then((result) => {
+          let r = result.rows[0]['RESULT'];
+          if (Array.isArray(r) && r.length === 1 && r[0] == null) return [];
+          else return r;
+        })
+        .finally(client.release);
     });
   }
   /** Connects a pool client to see if the configuration is working */
